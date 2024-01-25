@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Islami Android</string>
-    <string name="islami">إسلامي</string>
+    <string name="islami">Islami</string>
     <string name="quran">Quran</string>
     <string name="hadeth">Hadeth</string>
     <string name="sebha">Sebha</string>
     <string name="radio">Radio</string>
+    <string name="sura_name">Sura Name</string>
+    <string name="ayas_number">Ayas Number</string>
 </resources>
