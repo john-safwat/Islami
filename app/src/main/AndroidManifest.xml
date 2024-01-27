@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".UI.Home.MainActivity"/>
+        <activity android:name=".UI.SuraDetails.SuraDetailsActivity"/>
     </application>
 
 </manifest>

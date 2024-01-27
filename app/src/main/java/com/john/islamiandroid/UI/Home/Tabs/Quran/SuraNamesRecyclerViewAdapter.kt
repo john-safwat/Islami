@@ -24,7 +24,17 @@ class SuraNamesRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: SuraNamesRecyclerViewViewHolder, position: Int) {
         holder.bind(names[position] , numbers[position])
+        onItemClickListener.let { listener ->
+            holder.itemView.setOnClickListener {
+                listener.onItemClick(names[position], position)
+            }
+        }
     }
 
+    fun interface OnItemClickListener {
+        fun onItemClick(name:String , position: Int)
+    }
+
+    lateinit var onItemClickListener:OnItemClickListener
 
 }
