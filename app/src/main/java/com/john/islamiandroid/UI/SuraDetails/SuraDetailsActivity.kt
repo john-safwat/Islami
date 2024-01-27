@@ -4,17 +4,25 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.john.islamiandroid.Constants
 import com.john.islamiandroid.databinding.ActivitySuraDetailsBinding
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class SuraDetailsActivity : AppCompatActivity() {
 
     lateinit var name: String
     private var position: Int = 0
     private lateinit var suraDetailsBinding: ActivitySuraDetailsBinding
+    private lateinit var suraVersesRecyclerViewAdapter: SuraVersesRecyclerViewAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initActivityData()
-        setContentView(suraDetailsBinding.root)
         setBackButton()
+        setVersesAdapter(readSuraDetails())
+    }
+
+    private fun setVersesAdapter(readSuraDetails: List<String>) {
+        suraVersesRecyclerViewAdapter = SuraVersesRecyclerViewAdapter(readSuraDetails)
+        suraDetailsBinding.homeScreenContent.versesRecyclerView.adapter = suraVersesRecyclerViewAdapter
     }
 
     private fun setBackButton() {
@@ -31,6 +39,13 @@ class SuraDetailsActivity : AppCompatActivity() {
 
         suraDetailsBinding = ActivitySuraDetailsBinding.inflate(layoutInflater)
         suraDetailsBinding.title.text = name
+        suraDetailsBinding.homeScreenContent.suraDetailsTitle.text = "سورة $name"
+        setContentView(suraDetailsBinding.root)
+    }
+
+    private fun readSuraDetails():List<String>{
+        val reader = assets.open("${position}.txt").bufferedReader().use { it.readText() }
+        return reader.trim().split("\n")
     }
 
 }
