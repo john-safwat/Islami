@@ -1,15 +1,18 @@
 package com.john.islamiandroid.UI.Home.Tabs.Quran
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.john.islamiandroid.Constants
+import com.john.islamiandroid.UI.SuraDetails.SuraDetailsActivity
 import com.john.islamiandroid.databinding.FragmentQuranBinding
 
 class QuranFragment : Fragment() {
 
-    private lateinit var binding:FragmentQuranBinding
+    private lateinit var binding: FragmentQuranBinding
 
     private var arSuras = arrayListOf(
         "الفاتحه",
@@ -128,120 +131,120 @@ class QuranFragment : Fragment() {
         "الناس"
     )
     private var ayaNumber = arrayListOf(
-    "7",
-    "286",
-    "200",
-    "176",
-    "120",
-    "165",
-    "206",
-    "75",
-    "129",
-    "109",
-    "123",
-    "111",
-    "43",
-    "52",
-    "99",
-    "128",
-    "111",
-    "110",
-    "98",
-    "135",
-    "112",
-    "78",
-    "118",
-    "64",
-    "77",
-    "227",
-    "93",
-    "88",
-    "69",
-    "60",
-    "34",
-    "30",
-    "73",
-    "54",
-    "45",
-    "83",
-    "182",
-    "88",
-    "75",
-    "85",
-    "54",
-    "53",
-    "89",
-    "59",
-    "37",
-    "35",
-    "38",
-    "29",
-    "18",
-    "45",
-    "60",
-    "49",
-    "62",
-    "55",
-    "78",
-    "96",
-    "29",
-    "22",
-    "24",
-    "13",
-    "14",
-    "11",
-    "11",
-    "18",
-    "12",
-    "12",
-    "30",
-    "52",
-    "52",
-    "44",
-    "28",
-    "28",
-    "20",
-    "56",
-    "40",
-    "31",
-    "50",
-    "40",
-    "46",
-    "42",
-    "29",
-    "19",
-    "36",
-    "25",
-    "22",
-    "17",
-    "19",
-    "26",
-    "30",
-    "20",
-    "15",
-    "21",
-    "11",
-    "8",
-    "5",
-    "19",
-    "5",
-    "8",
-    "8",
-    "11",
-    "11",
-    "8",
-    "3",
-    "9",
-    "5",
-    "4",
-    "6",
-    "3",
-    "6",
-    "3",
-    "5",
-    "4",
-    "5",
-    "6"
+        "7",
+        "286",
+        "200",
+        "176",
+        "120",
+        "165",
+        "206",
+        "75",
+        "129",
+        "109",
+        "123",
+        "111",
+        "43",
+        "52",
+        "99",
+        "128",
+        "111",
+        "110",
+        "98",
+        "135",
+        "112",
+        "78",
+        "118",
+        "64",
+        "77",
+        "227",
+        "93",
+        "88",
+        "69",
+        "60",
+        "34",
+        "30",
+        "73",
+        "54",
+        "45",
+        "83",
+        "182",
+        "88",
+        "75",
+        "85",
+        "54",
+        "53",
+        "89",
+        "59",
+        "37",
+        "35",
+        "38",
+        "29",
+        "18",
+        "45",
+        "60",
+        "49",
+        "62",
+        "55",
+        "78",
+        "96",
+        "29",
+        "22",
+        "24",
+        "13",
+        "14",
+        "11",
+        "11",
+        "18",
+        "12",
+        "12",
+        "30",
+        "52",
+        "52",
+        "44",
+        "28",
+        "28",
+        "20",
+        "56",
+        "40",
+        "31",
+        "50",
+        "40",
+        "46",
+        "42",
+        "29",
+        "19",
+        "36",
+        "25",
+        "22",
+        "17",
+        "19",
+        "26",
+        "30",
+        "20",
+        "15",
+        "21",
+        "11",
+        "8",
+        "5",
+        "19",
+        "5",
+        "8",
+        "8",
+        "11",
+        "11",
+        "8",
+        "3",
+        "9",
+        "5",
+        "4",
+        "6",
+        "3",
+        "6",
+        "3",
+        "5",
+        "4",
+        "5",
+        "6"
     )
 
     private lateinit var surasNameAdapter: SuraNamesRecyclerViewAdapter
@@ -250,18 +253,26 @@ class QuranFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentQuranBinding.inflate(inflater , container , false )
+        binding = FragmentQuranBinding.inflate(inflater, container, false)
         initSurasNameRecyclerViewAdapter()
+        setOnSuraClickListener()
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+
+    private fun initSurasNameRecyclerViewAdapter() {
+        surasNameAdapter = SuraNamesRecyclerViewAdapter(names = arSuras, numbers = ayaNumber)
+        binding.surasRecyclerView.adapter = surasNameAdapter
     }
 
-    private fun initSurasNameRecyclerViewAdapter(){
-        surasNameAdapter = SuraNamesRecyclerViewAdapter(names = arSuras , numbers = ayaNumber)
-        binding.surasRecyclerView.adapter = surasNameAdapter
+    private fun setOnSuraClickListener() {
+        surasNameAdapter.onItemClickListener =
+            SuraNamesRecyclerViewAdapter.OnItemClickListener{ name, position ->
+                val intent = Intent(activity, SuraDetailsActivity::class.java)
+                intent.putExtra(Constants.chapterTitle , name)
+                intent.putExtra(Constants.chapterPosition , position+1)
+                startActivity(intent)
+            }
     }
 
 }
