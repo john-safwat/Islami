@@ -19,5 +19,4 @@ class HadethFragment : Fragment() {
         binding = FragmentHadethBinding.inflate(inflater , container , false )
         return binding.root
     }
-
 }

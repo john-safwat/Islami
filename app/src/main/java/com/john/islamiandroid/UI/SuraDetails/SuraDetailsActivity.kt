@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.john.islamiandroid.Constants
 import com.john.islamiandroid.databinding.ActivitySuraDetailsBinding
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 class SuraDetailsActivity : AppCompatActivity() {
 
