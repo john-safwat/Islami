@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.john.islamiandroid.R
+import com.john.islamiandroid.databinding.SuraVerseItemBinding
 
 class SuraVersesRecyclerViewAdapter(private var verses:List<String>) : RecyclerView.Adapter<SuraVersesRecyclerViewViewHolder>() {
     override fun onCreateViewHolder(
@@ -12,7 +13,7 @@ class SuraVersesRecyclerViewAdapter(private var verses:List<String>) : RecyclerV
         viewType: Int
     ): SuraVersesRecyclerViewViewHolder {
         return SuraVersesRecyclerViewViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.sura_verse_item, parent, false)
+            SuraVerseItemBinding.inflate(LayoutInflater.from(parent.context), parent , false)
         )
     }
 

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.john.islamiandroid.R
+import com.john.islamiandroid.databinding.QuranSuraItemBinding
 
 class SuraNamesRecyclerViewAdapter(
     private var names: List<String>,
@@ -14,7 +15,7 @@ class SuraNamesRecyclerViewAdapter(
         viewType: Int,
     ): SuraNamesRecyclerViewViewHolder {
         return SuraNamesRecyclerViewViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.quran_sura_item, parent, false)
+            QuranSuraItemBinding.inflate(LayoutInflater.from(parent.context), parent , false)
         )
     }
 
