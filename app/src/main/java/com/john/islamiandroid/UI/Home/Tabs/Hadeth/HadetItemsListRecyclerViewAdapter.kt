@@ -3,10 +3,10 @@ package com.john.islamiandroid.UI.Home.Tabs.Hadeth
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.john.islamiandroid.Models.Hadeth
 import com.john.islamiandroid.databinding.HadethItemBinding
-import com.john.islamiandroid.databinding.SuraVerseItemBinding
 
-class HadetItemsListRecyclerViewAdapter(private var hadethNumberList: MutableList<String>) : RecyclerView.Adapter<HadetItemsListRecyclerViewViewHolder>() {
+class HadetItemsListRecyclerViewAdapter(private var hadethList: MutableList<Hadeth>) : RecyclerView.Adapter<HadetItemsListRecyclerViewViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
@@ -17,10 +17,20 @@ class HadetItemsListRecyclerViewAdapter(private var hadethNumberList: MutableLis
     }
 
     override fun getItemCount(): Int {
-        return hadethNumberList.size
+        return hadethList.size
     }
 
     override fun onBindViewHolder(holder: HadetItemsListRecyclerViewViewHolder, position: Int) {
-        holder.bind(hadethNumberList[position])
+        holder.bind(hadethList[position])
+        onItemClickListener.let {
+            holder.itemView.setOnClickListener{
+                onItemClickListener.onItemClick(hadethList[position])
+            }
+        }
     }
+    lateinit var onItemClickListener:OnItemClickListener
+    fun interface OnItemClickListener{
+        fun onItemClick(hadeth: Hadeth)
+    }
+
 }

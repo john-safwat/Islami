@@ -3,6 +3,7 @@ package com.john.islamiandroid.UI.SuraDetails
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.john.islamiandroid.Constants
+import com.john.islamiandroid.VersesRecyclerView.VersesRecyclerViewAdapter
 import com.john.islamiandroid.databinding.ActivitySuraDetailsBinding
 
 class SuraDetailsActivity : AppCompatActivity() {
@@ -10,7 +11,7 @@ class SuraDetailsActivity : AppCompatActivity() {
     lateinit var name: String
     private var position: Int = 0
     private lateinit var suraDetailsBinding: ActivitySuraDetailsBinding
-    private lateinit var suraVersesRecyclerViewAdapter: SuraVersesRecyclerViewAdapter
+    private lateinit var suraVersesRecyclerViewAdapter: VersesRecyclerViewAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initActivityData()
@@ -19,7 +20,7 @@ class SuraDetailsActivity : AppCompatActivity() {
     }
 
     private fun setVersesAdapter(readSuraDetails: List<String>) {
-        suraVersesRecyclerViewAdapter = SuraVersesRecyclerViewAdapter(readSuraDetails)
+        suraVersesRecyclerViewAdapter = VersesRecyclerViewAdapter(readSuraDetails)
         suraDetailsBinding.homeScreenContent.versesRecyclerView.adapter = suraVersesRecyclerViewAdapter
     }
 

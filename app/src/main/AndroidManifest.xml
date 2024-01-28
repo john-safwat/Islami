@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".UI.Home.MainActivity"/>
         <activity android:name=".UI.SuraDetails.SuraDetailsActivity"/>
+        <activity android:name=".UI.HadethDetails.HadethDetailsActivity"/>
     </application>
 
 </manifest>
