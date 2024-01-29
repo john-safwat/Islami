@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
     // function to push fragment in the screen
     private fun pushFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().addToBackStack(null)
+        supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment).commit()
     }
 

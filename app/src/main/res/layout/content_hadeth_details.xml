@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_sura_details">
+    tools:showIn="@layout/activity_hadeth_details">
 
 
 
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 tools:ignore="UseCompoundDrawables">
                 <TextView
-                    android:id="@+id/sura_details_title"
+                    android:id="@+id/hadeth_details_title"
                     android:text="@string/app_name"
                     android:textSize="22sp"
                     android:layout_width="wrap_content"
@@ -52,14 +52,13 @@
                 android:layout_marginTop="15dp"
                 android:background="?attr/colorPrimary"/>
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/verses_recycler_view"
+                android:id="@+id/hadeth_verses_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:itemCount="100"
                 tools:listitem="@layout/verse_item"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 />
-
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
