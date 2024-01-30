@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="offWhite">#FFD4D3D2</color>
     <color name="brown">#FFB7935F</color>
+    <color name="brown_transparent">#99B7935F</color>
     <color name="lightBlack">#FF242424</color>
     <color name="gold">#FFFBC734</color>
     <color name="transparent">#00000000</color>
