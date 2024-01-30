@@ -9,4 +9,7 @@
     <string name="ayas_number">Ayas Number</string>
     <string name="ahadeth">Ahadeth</string>
     <string name="radio_title">إذاعة القرآن الكريم</string>
+    <string name="tasbeh_count">Tasbeh Count</string>
+    <string name="_0">0</string>
+    <string name="btn_tasbeh_title">سبحان الله</string>
 </resources>
