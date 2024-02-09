@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ThemeImages">
+        <attr name="logoImage" format="reference" />
+        <attr name="logo2Image" format="reference" />
+        <attr name="backgroundGradient" format="reference" />
+        <attr name="backgroundImage" format="reference" />
+        <attr name="sebhaHeadImage" format="reference" />
+        <attr name="sebhaBodyImage" format="reference" />
+        <attr name="textColor" format="color"/>
+        <attr name="bottomNavigationBarColor" format="color"/>
+        <attr name="bottomNavigationBarSelectedItemColor" format="color"/>
+    </declare-styleable>
+</resources>

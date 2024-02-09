@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.john.islamiandroid.R
 import com.john.islamiandroid.UI.Home.MainActivity
 import com.john.islamiandroid.databinding.ActivitySplashBinding
 
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
         // render the content of the activity_splash in the screen
         setContentView(binding.root)
         // create splash screen
-        Handler().postDelayed({navigateToMainActivity() }, 2000)
+        Handler(mainLooper).postDelayed({navigateToMainActivity() }, 2000)
     }
 
 

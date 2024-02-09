@@ -6,6 +6,8 @@
     <color name="brown">#FFB7935F</color>
     <color name="brown_transparent">#99B7935F</color>
     <color name="lightBlack">#FF242424</color>
-    <color name="gold">#FFFBC734</color>
+    <color name="gold">#FFFACC1D</color>
+    <color name="blue">#FF141A2E</color>
+    <color name="blue_dark">#FF090D16</color>
     <color name="transparent">#00000000</color>
 </resources>
