@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backround"
+    android:background="?attr/backgroundImage"
     tools:context=".UI.Home.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/islami"
-                android:textColor="@color/lightBlack"
+                android:textColor="?attr/textColor"
                 android:textSize="30sp" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="?attr/bottomNavigationBarColor"/>
-            <corners android:radius="20dp"/>
+            <gradient
+                android:startColor="@color/blue"
+                android:endColor="@color/blue_dark"
+                android:type="linear"
+                android:angle="270" />
         </shape>
     </item>
 

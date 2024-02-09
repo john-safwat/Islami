@@ -1,7 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.IslamiAndroid" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:statusBarColor">@color/blue_dark</item>
+        <item name="android:colorPrimary">@color/gold</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/gold</item>
+        <item name="logoImage">@drawable/logo_dark</item>
+        <item name="logo2Image">@drawable/logo2_dark</item>
+        <item name="backgroundGradient">@drawable/background_gradient_dark</item>
+        <item name="backgroundImage">@drawable/background_dark</item>
+        <item name="textColor">@color/white</item>
+        <item name="bottomNavigationBarSelectedItemColor">@color/gold</item>
+        <item name="bottomNavigationBarColor">@color/blue</item>
+        <item name="sebhaHeadImage">@drawable/sebha_head_dark</item>
+        <item name="sebhaBodyImage">@drawable/sebha_body_dark</item>
     </style>
 </resources>

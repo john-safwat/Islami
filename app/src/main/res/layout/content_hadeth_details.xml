@@ -12,6 +12,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardBackgroundColor="?attr/bottomNavigationBarColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.9"
@@ -44,7 +45,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:importantForAccessibility="no" />
+                    android:importantForAccessibility="no"
+                    app:tint="?attr/colorPrimary" />
             </LinearLayout>
             <View
                 android:layout_width="match_parent"

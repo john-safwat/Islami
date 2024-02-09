@@ -5,6 +5,15 @@
         <item name="android:colorPrimary">@color/brown</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorPrimary">@color/brown</item>
+        <item name="logoImage">@drawable/logo</item>
+        <item name="logo2Image">@drawable/logo2</item>
+        <item name="backgroundGradient">@drawable/background_gradient</item>
+        <item name="backgroundImage">@drawable/background</item>
+        <item name="textColor">@color/black</item>
+        <item name="bottomNavigationBarSelectedItemColor">@color/black</item>
+        <item name="bottomNavigationBarColor">@color/brown</item>
+        <item name="sebhaHeadImage">@drawable/sebha_head</item>
+        <item name="sebhaBodyImage">@drawable/sebha_body</item>
     </style>
 
     <style name="Theme.IslamiAndroid" parent="Base.Theme.IslamiAndroid" />
